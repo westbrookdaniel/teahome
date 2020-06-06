@@ -1,0 +1,116 @@
+[
+  {
+    "_id": 0,
+    "_collectionId": 0,
+    "name": "Space Blast",
+    "soldOut": false,
+    "price": 10.99,
+    "description": "A minty blast with a kick from outer space.",
+    "images": ["media/products/0/0", "media/products/0/1", "media/products/0/2"],
+    "ingredients": ["black tea", "cloves", "mint leaves", "ginger"],
+    "reviews": [{
+      "_id": 0,
+      "user": 1,
+      "date": "2020-09-04T00",
+      "value": 5,
+      "title": "Best Tea Ever",
+      "description": "This is awesome! I LOVED it!"
+    },{
+      "_id": 1,
+      "user": 0,
+      "date": "2020-07-04T00",
+      "value": 4,
+      "title": "Liked it a Lot",
+      "description": "I would buy it again"
+    }]
+  }, {
+    "_id": 1,
+    "_collectionId": 1,
+    "name": "Cloudy Memory",
+    "soldOut": false,
+    "price": 10.99,
+    "description": "When you can't think straight this is for you.",
+    "images": ["media/products/1/0", "media/products/1/1", "media/products/1/2"],
+    "ingredients": ["black tea", "lavender", "barley"],
+    "reviews": [{
+      "_id": 3,
+      "name": 2,
+      "date": "2020-28-05T00",
+      "value": 4,
+      "title": "Very Tasty But...",
+      "description": "This is such a nice tea I like it so very much. Tastes weird sometimes though."
+    }]
+  }, {
+    "_id": 2,
+    "_collectionId": 0,
+    "name": "It Came From Space",
+    "soldOut": false,
+    "price": 10.99,
+    "description": "It's not just from space, its a tea! Discover its secrets.",
+    "images": ["media/products/2/0", "media/products/2/1", "media/products/2/2"],
+    "ingredients": ["honey", "mint leaves", "dirt"]
+  }, {
+    "_id": 3,
+    "_collectionId": 0,
+    "name": "Milky Way",
+    "soldOut": false,
+    "price": 10.99,
+    "description": "Get blasted away to the milky way with our explosive package.",
+    "images": ["media/products/3/0", "media/products/3/1", "media/products/3/2"],
+    "ingredients": ["Milk", "Black Tea", "Sulphur"]
+  }, {
+    "_id": 4,
+    "_collectionId": 1,
+    "name": "Night Cap",
+    "soldOut": false,
+    "price": 14.99,
+    "description": "Get yourself to sleep easily with this tea. Adults only.",
+    "images": ["media/products/4/0", "media/products/4/1", "media/products/4/2"],
+    "ingredients": ["Vodka", "Secret Tea", "Gin"]
+  }, {
+    "_id": 5,
+    "_collectionId": 2,
+    "name": "Milk Choc",
+    "soldOut": false,
+    "price": 10.99,
+    "description": "The classic chocolate experience in your new favourite tea.",
+    "images": ["media/products/5/0", "media/products/5/1", "media/products/5/2"],
+    "ingredients": ["Butter", "Black Tea", "Cocoa", "Sugar"]
+  }, {
+    "_id": 6,
+    "_collectionId": 2,
+    "name": "Cookies and Cream",
+    "soldOut": false,
+    "price": 10.99,
+    "description": "Silky smooth, yet crunchy. And don't forget packed with indulgent chocolate.",
+    "images": ["media/products/6/0", "media/products/6/1", "media/products/6/2"],
+    "ingredients": ["Butter", "Black Tea", "Cocoa", "Cream"]
+  }, {
+    "_id": 7,
+    "_collectionId": 2,
+    "name": "Caramel Swirl",
+    "soldOut": false,
+    "price": 10.99,
+    "description": "Stuck in an endless choclate swirl of caramel. Tea for only the carameliest.",
+    "images": ["media/products/7/0", "media/products/7/1", "media/products/7/2"],
+    "ingredients": ["Caramel", "Black Tea", "Cocoa", "Sugar"]
+  }, {
+    "_id": 8,
+    "_collectionId": 3,
+    "name": "Black on Black",
+    "soldOut": false,
+    "price": 7.99,
+    "description": "The Classic. Black tea lovers only.",
+    "images": ["media/products/8/0", "media/products/8/1", "media/products/8/2"],
+    "ingredients": ["Black Tea"]
+  }, {
+    "_id": 9,
+    "_collectionId": 3,
+    "name": "Bank Robbery",
+    "soldOut": false,
+    "price": 10.99,
+    "description": "The Classic. But with a large score of gold a.k.a. caramel.",
+    "images": ["media/products/9/0", "media/products/9/1", "media/products/9/2"],
+    "ingredients": ["Black Tea", "Caramel"]
+  }
+]

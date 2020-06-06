@@ -1,0 +1,72 @@
+[
+  {
+       "first_name": "John",
+       "last_name": "Smith",
+       "email": "johnsmith@gmail.com",
+       "pass": "93970ea9891d1e3a2cc80878dbbf388c$aeac3e3f3b3d0520d5bc6fcf38af4621094482afc3b3612b7f08f09fac1af202",
+       "admin": false,
+       "reviews": [
+            1
+       ]
+  }, {
+       "first_name": "Daniel",
+       "last_name": "Westbrook",
+       "email": "totally@myemail.com",
+       "pass": "62486229afda3d7a59c1cc4ef43dd034$b5c146b75fa474371014d705a390df7b21f764d29912f78dbb1995d1bfe8ad23",
+       "admin": true,
+       "reviews": [
+            0
+       ]
+  }, {
+       "first_name": "Tommy",
+       "last_name": "Fut",
+       "email": "ilikecheese@gmail.com",
+       "pass": "1b63b1a04fdafb6888003c15d2a5260b$4ad8f681033386188d971c294c38ee9a60e5418f218530c3a66a9144438b98d4",
+       "admin": false,
+       "reviews": [
+            3
+       ]
+  }, {
+       "first_name": "Cool",
+       "last_name": "Dude",
+       "email": "cooldude@gmail.com",
+       "pass": "e217ead37a6b6faa92c63dd739d7b626$b17b8ee7d4bdb78e5f1d8fd64edbdce53ba9e01fda174e2440a0bf6aa18d5303",
+       "admin": false
+  }, {
+       "first_name": "Will",
+       "last_name": "Wonk",
+       "email": "chocolatemaker@gmail.com",
+       "pass": "e383361c23c8539610e2c02df5e9afd5$92ccc747020297e76dfe9d8af08059e419226af94ea9bb66fb5f54819c09157b",
+       "admin": false
+  }, {
+       "first_name": "Cool",
+       "last_name": "Joker",
+       "email": "chocolatemaker@gmail.com",
+       "pass": "e383361c23c8539610e2c02df5e9afd5$92ccc747020297e76dfe9d8af08059e419226af94ea9bb66fb5f54819c09157b",
+       "admin": false
+  }, {
+       "first_name": "Keyboard",
+       "last_name": "Warrior",
+       "email": "keyboardw@outlook.com",
+       "pass": "a1ebf5a8ace9b45593c7a504f99c1864$44c9263aa12f58f45bcf18fb79e5fcbf055dee0e009ee5c903ed17acd0d28967",
+       "admin": false
+  }, {
+       "first_name": "Cloud",
+       "last_name": "Person",
+       "email": "cloudlife@outlook.com",
+       "pass": "75ed958eb45f9607a4bcdeb6e82bb6a7$f0676801bdb889b02baba6ce461dab397a603cbb1af821c6794901ad2d4a2280",
+       "admin": false
+  }, {
+       "first_name": "Hulk",
+       "last_name": "Bane",
+       "email": "notahero@gmail.com",
+       "pass": "41c8e1f1c2c7bfe38867a0a02250677e$ce76ba00f20ffc531c2d39440e8fe9cd27138c051b2b1cb6ae034b464d971161",
+       "admin": false
+  }, {
+       "first_name": "Garry",
+       "last_name": "Guy",
+       "email": "thegarryguy@outlook.com",
+       "pass": "3a7be7094ace2c29654ed8c63f18baeb$feccbc5bc1456dc8f7e10040c7050a20ce297a5fe4d189501fde072d4ef1095e",
+       "admin": false
+  }
+]
