@@ -97,46 +97,31 @@ const App = {
       // footer
       // creates data
       let footerData = {}
-      // gets header template
-      fetch(`../templates/template-section-footer.html`, {
-        headers: { 
-          "Content-Security-Policy": "script-src 'self'",
-        }
-      })
-      // turns into text
-      .then((response) => response.text())
-      .then((template) => {
+      const footerTemplate = document.querySelector("#template-footer").innerHTML
 
-        // create el used for expanding page if footer isn't at bottom of screen
-        const footerGrower = document.createElement('div')
-        footerGrower.className = 'flex-grow-1';
+      // create el used for expanding page if footer isn't at bottom of screen
+      const footerGrower = document.createElement('div')
+      footerGrower.className = 'flex-grow-1';
 
-        // create footer el
-        const footerEl = document.createElement('footer');
-        footerEl.className = 'p-3';
-        // creates renderer using templateFileData
-        footerEl.innerHTML = Mustache.render(template, footerData);
+      // create footer el
+      const footerEl = document.createElement('footer');
+      footerEl.className = 'p-3';
+      // creates renderer using templateFileData
+      footerEl.innerHTML = Mustache.render(footerTemplate, footerData);
 
-        // fix for the direct to sign in page glitch which makes two footers
-        if (location.hash == '#signIn') {
-          
-          // insert into footer container
-          document.querySelector("#footer-container").innerHTML = footerEl.innerHTML;
+      // fix for the direct to sign in page glitch which makes two footers
+      if (location.hash == '#signIn') {
+        
+        // insert into footer container
+        document.querySelector("#footer-container").innerHTML = footerEl.innerHTML;
 
-        } else {
-          // insert footerGrower
-          App.rootEl.appendChild(footerGrower);
-          // insert output HTML at the end of rootEl
-          App.rootEl.appendChild(footerEl);
+      } else {
+        // insert footerGrower
+        App.rootEl.appendChild(footerGrower);
+        // insert output HTML at the end of rootEl
+        App.rootEl.appendChild(footerEl);
 
-        }
-
-      })
-      // catch errors
-      .catch(err => {
-        console.log(err);
-        Notify.show("Problem Loading Footer");
-      });
+      }
 
       const headerData = {}
       const headerTemplate = document.querySelector("#template-header").innerHTML
