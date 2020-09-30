@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Static Site Serving
-app.use(express.static(__dirname + 'app'))
+app.use(express.static(path.join(__dirname + 'app')))
 
 // Enable CORS for all HTTP methods
 app.use(function(req, res, next) {
