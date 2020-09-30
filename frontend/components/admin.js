@@ -272,7 +272,7 @@ const Admin = {
       // return new promise
       return new Promise((resolve, reject) => {
         // fetch
-        fetch(`http://localhost:8081/api/products/${id}`, {
+        fetch(`https://tea-home.herokuapp.com/api/products/${id}`, {
           method: 'PUT',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(dataObj)
@@ -307,7 +307,7 @@ const Admin = {
         // return new promise
         return new Promise((resolve, reject) => {
           // fetch
-          fetch(`http://localhost:8081/api/products/`, {
+          fetch(`https://tea-home.herokuapp.com/api/products/`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dataObj)
@@ -329,7 +329,7 @@ const Admin = {
         // return new promise
         return new Promise((resolve, reject) => {
           // fetch
-          fetch(`http://localhost:8081/api/products/${id}`, {
+          fetch(`https://tea-home.herokuapp.com/api/products/${id}`, {
             method: 'DELETE'
           })
           .then(res => {
@@ -353,7 +353,7 @@ const Admin = {
       // return new promise
       return new Promise((resolve, reject) => {
         // fetch
-        fetch(`http://localhost:8081/api/categories/${id}`, {
+        fetch(`https://tea-home.herokuapp.com/api/categories/${id}`, {
           method: 'PUT',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(dataObj)
@@ -375,7 +375,7 @@ const Admin = {
         // return new promise
         return new Promise((resolve, reject) => {
           // fetch
-          fetch(`http://localhost:8081/api/categories/${id}`, {
+          fetch(`https://tea-home.herokuapp.com/api/categories/${id}`, {
             method: 'DELETE'
           })
           .then(res => {
@@ -404,7 +404,7 @@ const Admin = {
         // return new promise
         return new Promise((resolve, reject) => {
           // fetch
-          fetch(`http://localhost:8081/api/categories/`, {
+          fetch(`https://tea-home.herokuapp.com/api/categories/`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dataObj)

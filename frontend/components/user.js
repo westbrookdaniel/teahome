@@ -15,7 +15,7 @@ const User = {
     // sets up function to be called after authenticating admin password
     function createUser() {
       // send userData to backend API using fetch = POST
-      fetch('http://localhost:8081/api/users', {
+      fetch('https://tea-home.herokuapp.com/api/users', {
         method: 'post',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData)
@@ -43,7 +43,7 @@ const User = {
         adminAuth: userData.adminAuth
       }
       // fetch to authenticate adminAuth password
-      fetch('http://localhost:8081/api/auth/admin', {
+      fetch('https://tea-home.herokuapp.com/api/auth/admin', {
         method: 'post',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(adminAuthObj)
@@ -86,7 +86,7 @@ const User = {
       // return new promise
       return new Promise((resolve, reject) => {
         // fetch
-        fetch(`http://localhost:8081/api/users/${id}`, {
+        fetch(`https://tea-home.herokuapp.com/api/users/${id}`, {
           method: 'PUT',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(dataObj)
@@ -106,7 +106,7 @@ const User = {
     // return new promise
     return new Promise((resolve, reject) => {
       // fetch
-      fetch(`http://localhost:8081/api/users/${id}`, {
+      fetch(`https://tea-home.herokuapp.com/api/users/${id}`, {
         method: 'DELETE',
       })
       .then(res => res.json())
@@ -130,7 +130,7 @@ const User = {
     // return new promise
     return new Promise((resolve, reject) => {
       // fetch
-      fetch(`http://localhost:8081/api/auth/pass`, {
+      fetch(`https://tea-home.herokuapp.com/api/auth/pass`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dataObj)

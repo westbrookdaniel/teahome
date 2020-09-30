@@ -10,7 +10,7 @@ const Product = {
     // return new promise
     return new Promise((resolve, reject) => {
       // fetch categories
-      fetch('http://localhost:8081/api/products')
+      fetch('https://tea-home.herokuapp.com/api/products')
       .then(res => res.json())
       .then(products => {
         resolve(products);
@@ -25,7 +25,7 @@ const Product = {
       // return new promise
       return new Promise((resolve, reject) => {
         // fetch categories
-        fetch('http://localhost:8081/api/categories')
+        fetch('https://tea-home.herokuapp.com/api/categories')
         .then(res => res.json())
         .then(categories => {
           resolve(categories);
@@ -40,7 +40,7 @@ const Product = {
       // return new promise
       return new Promise((resolve, reject) => {
         // fetch categories
-        fetch(`http://localhost:8081/api/categories/${id}`)
+        fetch(`https://tea-home.herokuapp.com/api/categories/${id}`)
         .then(res => res.json())
         .then(categories => {
           resolve(categories);
@@ -56,7 +56,7 @@ const Product = {
     // return new promise
     return new Promise((resolve, reject) => {
       // fetch categories
-      let url = new URL("http://localhost:8081/api/products");
+      let url = new URL("https://tea-home.herokuapp.com/api/products");
       let params = { ids: ids };
       url.search = new URLSearchParams(params).toString();
 
@@ -75,7 +75,7 @@ const Product = {
     // return new promise
     return new Promise((resolve, reject) => {
       // fetch categories
-      let url = new URL("http://localhost:8081/api/products");
+      let url = new URL("https://tea-home.herokuapp.com/api/products");
       let params = { category: categoryId };
       url.search = new URLSearchParams(params).toString();
 

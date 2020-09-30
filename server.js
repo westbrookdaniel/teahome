@@ -23,10 +23,12 @@ app.use(express.static(path.join(__dirname + '/frontend')))
 
 // Add to header
 app.use(function(req, res, next) {
-   res.setHeader("Access-Control-Allow-Origin", "*");
-   res.setHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
-   res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-   res.setHeader("Content-Security-Policy", "script-src 'self'");
+   res.header({
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, PUT, POST, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+      "Content-Security-Policy": "script-src 'self'",
+   });
    
    next();
 });
