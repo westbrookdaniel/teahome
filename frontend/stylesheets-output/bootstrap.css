@@ -54,7 +54,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -343,7 +343,7 @@ h6, .h6 {
 
 .display-1 {
   font-size: 6rem;
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.2; }
   @media (max-width: 1200px) {
     .display-1 {
@@ -351,7 +351,7 @@ h6, .h6 {
 
 .display-2 {
   font-size: 5.5rem;
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.2; }
   @media (max-width: 1200px) {
     .display-2 {
@@ -359,7 +359,7 @@ h6, .h6 {
 
 .display-3 {
   font-size: 4.5rem;
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.2; }
   @media (max-width: 1200px) {
     .display-3 {
@@ -367,7 +367,7 @@ h6, .h6 {
 
 .display-4 {
   font-size: 3.5rem;
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.2; }
   @media (max-width: 1200px) {
     .display-4 {
@@ -4297,7 +4297,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4382,7 +4382,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
