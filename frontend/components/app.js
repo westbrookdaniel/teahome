@@ -131,7 +131,6 @@ const App = {
       document.querySelector('#header-container').innerHTML = output;
 
 
-      console.log(document.querySelector('#header-container'));
         // get main nav
         let mainNav = document.querySelector('#main-nav');
         // render HTML
