@@ -13,14 +13,13 @@ const path = require('path')
 const port = process.env.PORT || 8081;
 const app = express();
 
-
 // 2. Middleware -----------------------------------------
 // Body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Static Site Serving
-app.use(express.static(path.join(__dirname + 'app')))
+app.use(express.static(path.join(__dirname + '/app')))
 
 // Enable CORS for all HTTP methods
 app.use(function(req, res, next) {
@@ -58,7 +57,7 @@ let Category = require('./models/Category.js');
 
 // Home 
 app.get('/', (req, res) => {
-   res.sendFile(path.join( __dirname, 'index.html' ));
+   res.sendFile(path.join( __dirname, 'app', '/index.html' ));
 })
 
 // Products -----------------------------------
