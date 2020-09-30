@@ -55,6 +55,11 @@ let Category = require('./models/Category.js');
 
 // 5. API Routes ---------------------------------------------
 
+// Home 
+app.get('/', (req, res) => {
+   res.send('TeaHome')
+})
+
 // Products -----------------------------------
 // Products - GET - get all Products
 app.get('/api/products', (req, res) => {
