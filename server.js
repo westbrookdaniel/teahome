@@ -8,6 +8,7 @@ const jwt = require('jsonwebtoken');
 const exjwt = require('express-jwt');
 const secretSalt = 'hfldjsvrehlktjh435sd0f89ds9032jkl2jlk3242jsalkds'
 const Utils = require("./Utils.js")
+const path = require('path')
 
 const port = process.env.PORT || 8081;
 const app = express();
@@ -57,7 +58,7 @@ let Category = require('./models/Category.js');
 
 // Home 
 app.get('/', (req, res) => {
-   res.send('TeaHome')
+   res.sendFile(path.join( __dirname, 'assets', './index.html' ));
 })
 
 // Products -----------------------------------
