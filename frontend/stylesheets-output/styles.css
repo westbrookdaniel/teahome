@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0; }
+
+.nav-item.dropdown {
+  cursor: pointer; }
+
+.page-header {
+  display: flex;
+  flex-direction: column; }
+
+.page-header #main-nav {
+  flex-grow: 1; }
+
+.featured-collection-image {
+  max-width: 200px; }
+
+.admin-bar {
+  width: 100%;
+  z-index: 99999999; }
+
+.admin-bar .navbar {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease; }
+
+.admin-bar.hideAdmin .navbar {
+  transform: translateY(100px);
+  opacity: 0; }
+
+.page-content {
+  transition: all 0.3s ease;
+  position: relative;
+  top: 0; }
+
+.form-control.form-control-sm {
+  border-radius: 1.5em; }
+
+#app {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  transition: all 0.3s ease;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; }
+
+.page {
+  padding: 2em; }
+
+#app.hidden {
+  opacity: 0;
+  top: 10%; }
+
+#products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  position: relative;
+  width: 100%;
+  gap: 2em;
+  opacity: 1;
+  transition: all 0.3s ease;
+  height: auto; }
+
+#products-list.active {
+  opacity: 0; }
+
+/* user nav */
+#user-nav {
+  display: flex; }
+
+#user-nav a {
+  text-decoration: none;
+  padding: 0.4em 1em;
+  text-transform: uppercase;
+  color: #333; }
+
+/* product entry */
+.product-entry {
+  position: relative;
+  opacity: 1; }
+
+.product-entry .icon-times {
+  display: none; }
+
+.product-entry .icon-plus {
+  display: block; }
+
+.product-entry.is-favourite .shadow {
+  box-shadow: none !important; }
+
+.product-entry.is-favourite .icon-plus {
+  display: none; }
+
+.product-entry.is-favourite .icon-times {
+  display: block; }
+
+.product-entry.is-favourite .add-product-btn {
+  opacity: 0.7; }
+
+/* product modal */
+.product-modal {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px; }
+
+.product-modal .product-cover {
+  width: 300px; }
+
+/* Modal */
+.modal-style {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  min-height: 400px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 10000; }
+
+.modal-style > * {
+  overflow: scroll; }
+
+.modal-content-inner {
+  padding: 2em;
+  height: 100%;
+  justify-content: center;
+  border: none !important; }
+
+.modal-close-btn {
+  position: absolute;
+  top: -18px;
+  right: -20px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  text-align: center;
+  background: #eee;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  outline: none; }
+
+.modal-close-btn:hover {
+  background: #1a1a1a;
+  color: #fff; }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999; }
+
+#user-favourites-menu {
+  padding-right: 10px;
+  position: relative; }
+
+#user-favourites-menu span {
+  display: inline-block;
+  background: red;
+  color: #fff;
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  padding-top: 2px;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px; }
+
+.loading {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: red;
+  animation: pulse 1s infinite;
+  border-radius: 50%;
+  margin: 20px auto; }
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0); }
+  50% {
+    transform: scale(1); } }
+
+#notifications {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 300px;
+  z-index: 99999999; }
+
+.notification-entry {
+  padding: 1em;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 200px;
+  margin-bottom: 10px;
+  position: relative; }
+
+#notifications {
+  position: fixed;
+  top: 80px;
+  right: 30px;
+  width: 300px; }
+  #notifications .notificaiton-entry {
+    position: relative; }
+
+.cart-btn {
+  position: relative; }
+
+#favs-count {
+  position: absolute;
+  border-radius: 5px;
+  right: -3px;
+  top: -3px; }
+
+.max-width-form {
+  max-width: 600px; }
+
+footer {
+  background-color: #f4f4f4; }

@@ -1,0 +1,123 @@
+<!-- ========= Home Page ========= -->
+
+<div id="header-container">
+
+</div>
+
+<!-- ========================================== Hero ========================================== -->
+<div class="header-offset">
+
+  <div class="hero overflow-hidden">
+
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-lg-5 px-5 mb-5">
+          <h1 class="display-4 mb-3">Sweet Dreams Collection</h1>
+          <p>
+            Our latest and greatest collection is now here! Drink yourself to sleep with our collection of fresh new teas. Available for a limited time only.
+          </p>
+          <a href="#collection">
+            <button class="btn bg-dark text-white shadow" id="hero-products-btn">See Collection</button>
+          </a>
+        </div>
+        <div class="col-lg-7">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg pb-5">
+                <div id="products-list" class="hero-products"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-background w-100 h-100 d-flex flex-column justify-content-end">
+      <div>
+        <svg class="waves-wv" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave-wv" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+
+          <g class="parallax-wv">
+            <use xlink:href="#gentle-wave-wv" x="48" y="0"  />
+            <use xlink:href="#gentle-wave-wv" x="48" y="3" />
+            <use xlink:href="#gentle-wave-wv" x="48" y="5"  />
+            <use xlink:href="#gentle-wave-wv" x="48" y="7"  />
+          </g>
+        </svg>
+        <div class="filler-wv">
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================== About ========================================== -->
+
+  <section class="pt-4">
+    <div class="container py-5">
+      <div class="row align-items-center pb-xl-5">
+        <div class="col-md mr-md-5">
+          <h2 class="font-weight-normal pb-2">About Us</h2>
+          <p>
+            Our love for tea started when cool packaging was a rare commodity in Australia. But suddenly we
+             found ourselves expecting two different things from the same cup of tea. We wanted a calming cup of
+             tea and an energising, uplifting variety of packgings to thrill and excite.
+           </p>
+           <p>
+              We've always just loved tea, and now we make it too.
+           </p>
+        </div>
+        <div class="col-lg mt-lg-0 mt-5">
+            <ul class="fa-ul d-flex flex-wrap position-relative lead mt-4">
+              <li class="w-50 mb-3"><span class="fa-li"><i class="fas fa-check"></i></span>Fresh Tea</li>
+              <li class="w-50 mb-3"><span class="fa-li"><i class="fas fa-check"></i></span>New Looks</li>
+              <li class="w-50 mb-3"><span class="fa-li"><i class="fas fa-check"></i></span>Fun Community</li>
+              <li class="w-50 mb-3"><span class="fa-li"><i class="fas fa-check"></i></span>Amazing Taste</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================== Featured Collection ========================================== -->
+
+  <section class="bg-sample-collection text-white">
+    <div class="container py-5">
+      <div class="row align-items-center px-xl-5">
+        <div class="col-lg-8 mb-3 mb-lg-0">
+          <h2 class="font-weight-normal pb-2">{{ name }}</h2>
+          <p>{{ description }}</p>
+          <a href="#collection"><button class="btn bg-light text-dark text-white shadow featured-collection-btn">See Collection</button></a>
+        </div>
+        <div class="col-lg order-lg-first">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <img class="float-right shadow featured-collection-image rounded" src="{{ featured_image }}" alt="Featured Image">
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========================================== About ========================================== -->
+
+  <section class="pt-5">
+    <div class="container py-5">
+      <div class="row align-items-center pb-xl-5">
+        <div class="col-md mr-md-5">
+          <h2 class="font-weight-normal pb-2">See All of Our Products</h2>
+          <a href="#products"><button class="btn bg-dark text-white shadow">Take Me There</button></a>
+        </div>
+      </div>
+    </div>
+  </section>

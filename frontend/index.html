@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8"/>
+  <title>TeaHome</title>
+  <link rel="stylesheet" href="http://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./stylesheets-output/styles.css"/>
+
+  <link rel="stylesheet" href="./stylesheets-output/bootstrap.css">
+
+  <script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script defer src="./node_modules/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div id="app">
+
+  </div>
+  <script src="node_modules/mustache/mustache.min.js"></script>
+  <script src="index.js" type="module"></script>
+
+  <!-- Product Modal Template -->
+      <script type="text/template" id="template-cart-modal">
+        <div class="product-modal">
+          <div class="content">
+            <h2 class="name">Payment Accepted!</h2>
+            <p class="text-muted">For ${{ total }}</p>
+            <p>Thank you for your purchase!</p>
+            <a href="#" class="cart-modal-btn"><button class="btn btn-dark fav-btn">Home</button></a>
+          </div>
+        </div>
+      </script>
+
+  <!-- Product Modal Template -->
+      <script type="text/template" id="template-product-modal">
+        <div class="row align-items-center">
+          <div class="col-md pb-5 pb-md-0">
+            <h2 class="name">{{ name }}</h2>
+            <p class="text-muted">{{#soldOut}}Sold Out{{/soldOut}}
+            {{^soldOut}}${{ price }}{{/soldOut}}</p>
+            <p>{{ description }}</p>
+            <div class="my-5">
+              <h5 class="text-sm-left">Ingredients</h3>
+              <p class="text-sm-left text-capitalize">{{#ingredients}}<span>{{.}}, </span>{{/ingredients}}</p>
+            </div>
+            <button class="btn btn-dark fav-btn">Add to Cart</button>
+          </div>
+          <!-- gets first source of images array -->
+          <div class="col-md">
+            <img src="{{#images}}{{.}}{{/images}}" alt="Product Image" class="w-100 product-cover rounded">
+          </div>
+        </div>
+      </script>
+
+  <!-- Products Entry Template -->
+      <script type="text/template" id="template-product-entry">
+        <div>
+          <div class="card shadow">
+            <img src="{{#images}}{{.}}{{/images}}" class="card-img-top">
+            <div class="card-body">
+              <p class="m-0">{{ name }}</p>
+              <p class="m-0 text-muted">{{#soldOut}}Sold Out{{/soldOut}}
+              {{^soldOut}}${{ price }}{{/soldOut}}</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-dark mr-1 add-product-btn"><span class="icon-plus"><i class="fas fa-plus"></i></span><span class="icon-times"><i class="fas fa-times"></i></span></button>
+              <button class="btn btn-outline-dark view-product-btn">View</button>
+            </div>
+          </div>
+        </div>
+      </script>
+
+
+
+
+    <!-- ================================== Admin Templates ================================== -->
+
+    <!-- Edit Product Modal Template -->
+        <script type="text/template" id="template-admin-editProduct-modal">
+          <div>
+            <div class="content">
+              <h2 class="name">Edit Product</h2>
+              <!-- storage for ids -->
+              <p class="text-muted">Product ID: <span class="modal-objectId">{{ id }}</span></p>
+              <p>Any fields left empty will not be updated.</p>
+
+              <form action="" method="post" id="form-admin" class="mt-4 max-width-form inline-form">
+                <div class="field form-group">
+                  <input type="text" name="name" placeholder="Name" class="form-control">
+                </div>
+                <div class="field form-group">
+                  <label class="d-block">SoldOut</label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" name="soldOut" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="false">
+                    <label class="form-check-label" for="inlineRadio1">False</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" name="soldOut" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="true">
+                    <label class="form-check-label" for="inlineRadio2">True</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" name="soldOut" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="">
+                    <label class="form-check-label" for="inlineRadio2">Unset</label>
+                  </div>
+                </div>
+                <div class="field form-group">
+                  <label class="d-block">Available</label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" name="available" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="false">
+                    <label class="form-check-label" for="inlineRadio1">False</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" name="available" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="true">
+                    <label class="form-check-label" for="inlineRadio2">True</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" name="available" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="">
+                    <label class="form-check-label" for="inlineRadio3">Unset</label>
+                  </div>
+                </div>
+                <div class="field form-group mt-3">
+                  <input type="text" name="price" placeholder="Price" class="form-control">
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="description" placeholder="Description" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="ingredients" placeholder="Ingredients" rows="2"></textarea>
+                  <label class="form-check-label">Write ingredients seperated by , and a space</label>
+                </div>
+
+                <button type="submit" class="btn btn-dark">Save Edit</button>
+                <input type="reset" class="btn btn-outline-dark">
+              </form>
+            </div>
+          </div>
+        </script>
+
+
+        <!-- New Product Modal Template -->
+            <script type="text/template" id="template-admin-newProduct-modal">
+              <div>
+                <div class="content">
+                  <h2 class="name">New Product</h2>
+                  <!-- storage for ids -->
+                  <p class="text-muted">Category ID: <span class="modal-objectId">{{ id }}</span></p>
+                  <p>All fields are required.</p>
+
+                  <form action="" method="post" id="form-admin" class="mt-4 max-width-form inline-form">
+                    <div class="field form-group">
+                      <!-- name -->
+                      <input type="text" name="name" placeholder="Name" class="form-control">
+                    </div>
+                    <div class="field form-group">
+                      <!-- soldOut -->
+                      <label class="d-block">SoldOut</label>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="soldOut" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="false">
+                        <label class="form-check-label" for="inlineRadio1">False</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="soldOut" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="true">
+                        <label class="form-check-label" for="inlineRadio2">True</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="soldOut" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="">
+                        <label class="form-check-label" for="inlineRadio3">Unset</label>
+                      </div>
+                    </div>
+                    <div class="field form-group">
+                      <!-- Available -->
+                      <label class="d-block">Available</label>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="available" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="false">
+                        <label class="form-check-label" for="inlineRadio1">False</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="available" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="true">
+                        <label class="form-check-label" for="inlineRadio2">True</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="available" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="">
+                        <label class="form-check-label" for="inlineRadio3">Unset</label>
+                      </div>
+                    </div>
+                    <div class="field form-group mt-3">
+                      <!-- price -->
+                      <input type="text" name="price" placeholder="Price" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <!-- description -->
+                      <textarea class="form-control" name="description" placeholder="Description" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <!-- Ingredients -->
+                      <textarea class="form-control" name="ingredients" placeholder="Ingredients" rows="2"></textarea>
+                      <label class="form-check-label">Write ingredients seperated by , and a space</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark">Create</button>
+                    <input type="reset" class="btn btn-outline-dark">
+                  </form>
+                </div>
+              </div>
+            </script>
+
+
+            <!-- Delete Product Modal Template -->
+                <script type="text/template" id="template-admin-deleteProduct-modal">
+                  <div>
+                    <div class="content">
+                      <h2 class="name">Delete Product</h2>
+                      <!-- storage for ids -->
+                      <p class="text-muted">Product ID: <span class="modal-objectId">{{ id }}</span></p>
+                      <p>If you want to delete this product, type delete into the confirmation field below.</p>
+
+                      <form action="" method="post" id="form-admin" class="mt-4 max-width-form inline-form">
+                        <div class="field form-group">
+                          <input type="text" name="confirm" placeholder="Confirm" class="form-control">
+                        </div>
+
+                        <button type="submit" class="btn btn-dark">Confirm Delete</button>
+                      </form>
+                    </div>
+                  </div>
+                </script>
+
+
+            <!-- Delete Product Modal Template -->
+                <script type="text/template" id="template-admin-deleteCategory-modal">
+                  <div>
+                    <div class="content">
+                      <h2 class="name">Delete Category</h2>
+                      <!-- storage for ids -->
+                      <p class="text-muted">Category ID: <span class="modal-objectId">{{ id }}</span></p>
+                      <p>If you want to delete this category, type delete into the confirmation field below. Note that this doesn't delete the products within it.</p>
+
+                      <form action="" method="post" id="form-admin" class="mt-4 max-width-form inline-form">
+                        <div class="field form-group">
+                          <input type="text" name="confirm" placeholder="Confirm" class="form-control">
+                        </div>
+
+                        <button type="submit" class="btn btn-dark">Confirm Delete</button>
+                      </form>
+                    </div>
+                  </div>
+                </script>
+
+
+            <!-- Edit Category Modal Template -->
+                <script type="text/template" id="template-admin-editCategory-modal">
+                  <div>
+                    <div class="content">
+                      <h2 class="name">Edit Category</h2>
+                      <!-- storage for ids -->
+                      <p class="text-muted">Category ID: <span class="modal-objectId">{{ id }}</span></p>
+                      <p>Any fields left empty will not be updated.</p>
+
+                      <form action="" method="post" id="form-admin" class="mt-4 max-width-form inline-form">
+                        <div class="field form-group">
+                          <input type="text" name="name" placeholder="Name" class="form-control">
+                        </div>
+                        <div class="field form-group">
+                          <input type="text" name="color" placeholder="Color" class="form-control">
+                          <label class="form-check-label">Use the rgb or hex formats</label>
+                        </div>
+                        <div class="field form-group">
+                          <label class="d-block">Is it a Collection?</label>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="is_collection" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="false">
+                            <label class="form-check-label" for="inlineRadio1">False</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="is_collection" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="true">
+                            <label class="form-check-label" for="inlineRadio2">True</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="is_collection" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="">
+                            <label class="form-check-label" for="inlineRadio2">Unset</label>
+                          </div>
+                        </div>
+                        <div class="field form-group">
+                          <label class="d-block">Available</label>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="available" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="false">
+                            <label class="form-check-label" for="inlineRadio1">False</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="available" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="true">
+                            <label class="form-check-label" for="inlineRadio2">True</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="available" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="">
+                            <label class="form-check-label" for="inlineRadio3">Unset</label>
+                          </div>
+                        </div>
+                        <div class="field form-group mt-3">
+                          <input type="text" name="ending" placeholder="Ending Date" class="form-control">
+                          <label class="form-check-label">Use the format YYYY-DD-MMT00</label>
+                        </div>
+                        <div class="form-group">
+                          <textarea class="form-control" name="description" placeholder="Description" rows="2"></textarea>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-dark">Save Edit</button>
+                        <input type="reset" class="btn btn-outline-dark">
+                      </form>
+                    </div>
+                  </div>
+                </script>
+
+            <!-- New Category Modal Template -->
+                <script type="text/template" id="template-admin-newCategory-modal">
+                  <div>
+                    <div class="content">
+                      <h2 class="name">New Category</h2>
+                      <!-- storage for ids -->
+                      <p class="text-muted d-none">Unused ID: <span class="modal-objectId">{{ id }}</span></p>
+                      <p>All fields are required.</p>
+
+                      <form action="" method="post" id="form-admin" class="mt-4 max-width-form inline-form">
+                        <div class="field form-group">
+                          <input type="text" name="name" placeholder="Name" class="form-control">
+                        </div>
+                        <div class="field form-group">
+                          <input type="text" name="color" placeholder="Color" class="form-control">
+                          <label class="form-check-label">Use the rgb or hex formats</label>
+                        </div>
+                        <div class="field form-group">
+                          <label class="d-block">Is it a Collection?</label>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="is_collection" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="false">
+                            <label class="form-check-label" for="inlineRadio1">False</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="is_collection" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="true">
+                            <label class="form-check-label" for="inlineRadio2">True</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="is_collection" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="">
+                            <label class="form-check-label" for="inlineRadio2">Unset</label>
+                          </div>
+                        </div>
+                        <div class="field form-group">
+                          <label class="d-block">Available</label>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="available" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="false">
+                            <label class="form-check-label" for="inlineRadio1">False</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="available" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="true">
+                            <label class="form-check-label" for="inlineRadio2">True</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="available" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="">
+                            <label class="form-check-label" for="inlineRadio3">Unset</label>
+                          </div>
+                        </div>
+                        <div class="field form-group mt-3">
+                          <input type="text" name="ending" placeholder="Ending Date" class="form-control">
+                          <label class="form-check-label">Use the format YYYY-DD-MMT00</label>
+                        </div>
+                        <div class="form-group">
+                          <textarea class="form-control" name="description" placeholder="Description" rows="2"></textarea>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-dark">Create</button>
+                        <input type="reset" class="btn btn-outline-dark">
+                      </form>
+                    </div>
+                  </div>
+                </script>
+
+
+</body>
+
+</html>

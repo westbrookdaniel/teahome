@@ -1,0 +1,60 @@
+<!-- ========= User Profile ========= -->
+
+<div id="header-container">
+
+</div>
+
+  <!-- ========================================== Heading ========================================== -->
+
+  <section class="pt-4 mt-5">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-lg-5 px-5">
+          <h1>{{firstName}} {{lastName}}</h1>
+          <p>{{email}}</p>
+          {{#admin}}
+          <!-- admin = true -->
+          <p>Admin</p>
+          {{/admin}}
+          {{^admin}}
+          <!-- adimn = false -->
+          {{/admin}}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pt-4 mt-5">
+    <div class="container">
+
+      <div class="row mt-2 mb-5">
+        <div class="col-lg-5 px-5">
+          <h2>Edit</h2>
+          <p>This action can not be reversed. Not all fields are required.</p>
+          <form action="" method="update" id="form-edit-profile" class="mt-4 max-width-form inline-form">
+            <div class="field form-group">
+              <input type="text" name="first_name" placeholder="First Name" class="form-control">
+            </div>
+            <div class="field form-group">
+              <input type="text" name="last_name" placeholder="Last Name" class="form-control">
+            </div>
+            <div class="field form-group">
+              <input type="email" name="email" placeholder="Email" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-dark">Edit Profile</button>
+          </form>
+        </div>
+        <div class="col-lg-5 px-5 my-sm-5">
+          <h2>Delete</h2>
+          <p>Enter your password to confirm. This action can not be reversed.</p>
+          <form action="" method="post" id="form-remove-profile" class="mt-4 max-width-form inline-form">
+            <div class="field form-group">
+              <input type="password" name="pass" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-outline-dark">Remove Profile</button>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
