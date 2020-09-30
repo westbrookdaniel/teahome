@@ -138,24 +138,15 @@ const App = {
         Notify.show("Problem Loading Footer");
       });
 
-      // header
-      // creates data
-      let headerData = {}
-      // gets header template
-      fetch(`../templates/template-section-header.html`, {
-        headers: { 
-          "Content-Security-Policy": "script-src 'self'",
-        }
-      })
-      // turns into text
-      .then((response) => response.text())
-      .then((template) => {
-        /// creates renderer using templateFileData
-        let output = Mustache.render(template, headerData);
-        // insert output HTML into the header-container
-        document.querySelector('#header-container').innerHTML = output;
+      const headerData = {}
+      const headerTemplate = document.querySelector("#template-header").innerHTML
+      /// creates renderer using templateFileData
+      let output = Mustache.render(headerTemplate, headerData);
+      // insert output HTML into the header-container
+      document.querySelector('#header-container').innerHTML = output;
 
 
+      console.log(document.querySelector('#header-container'));
         // get main nav
         let mainNav = document.querySelector('#main-nav');
         // render HTML
@@ -256,14 +247,6 @@ const App = {
 
         App.refreshNav();
         User.updateFavsCount();
-
-
-      })
-      .catch(err => {
-        console.log(err);
-        Notify.show("Problem Loading Header");
-      });
-
     },
 
 
