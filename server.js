@@ -58,7 +58,7 @@ let Category = require('./models/Category.js');
 
 // Home 
 app.get('/', (req, res) => {
-   res.sendFile(path.join( __dirname, 'assets', 'index.html' ));
+   res.sendFile(path.join( __dirname, 'assets', './app/index.html' ));
 })
 
 // Products -----------------------------------
