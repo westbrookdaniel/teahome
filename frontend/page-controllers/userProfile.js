@@ -51,7 +51,6 @@ function userProfilePageController(){
           })
 
         } else {
-          console.log(res);
           Notify.show(res.message)
         }
 

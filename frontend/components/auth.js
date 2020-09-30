@@ -71,7 +71,6 @@ const Auth = {
         }else {
           // token valid
           res.json().then(res => {
-            console.log(res);
             // set auth.authenticated to true
             Auth.authenticated = true;
             // set user info in user

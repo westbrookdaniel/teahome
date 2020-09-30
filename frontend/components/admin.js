@@ -245,7 +245,6 @@ const Admin = {
       .then( res => {
         // deal with result
         Notify.show("Successful");
-        console.log(res);
         // removes modal
         Modal.remove();
         // refresh

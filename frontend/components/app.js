@@ -236,7 +236,11 @@ const App = {
 
     loadPage: (title, templateId, data, callback) => {
       // set document title
-      document.title = title;
+      if (title === 'TeaHome') {
+        document.title = 'TeaHome | Excellent Tea For You To Enjoy'
+      } else {
+        document.title = `${title} | TeaHome`;
+      }
 
       // grab the template and store in a variable
       // let template = document.querySelector(`#${templateId}`).innerHTML;
