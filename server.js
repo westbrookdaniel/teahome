@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Static Site Serving
-app.use(express.static(path.join(__dirname + '/app')))
+app.use(express.static(path.join(__dirname + '/frontend')))
 
 // Add to header
 app.use(function(req, res, next) {
