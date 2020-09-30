@@ -19,6 +19,9 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Static Site Serving
+app.use(express.static('public'))
+
 // Enable CORS for all HTTP methods
 app.use(function(req, res, next) {
    res.header("Access-Control-Allow-Origin", "*");
@@ -51,11 +54,7 @@ let User = require('./models/User.js');
 let Category = require('./models/Category.js');
 
 
-// 5. Routes ---------------------------------------------
-// Homepage
-app.get('/', (req, res) => {
-   res.send("hello world");
-});
+// 5. API Routes ---------------------------------------------
 
 // Products -----------------------------------
 // Products - GET - get all Products
