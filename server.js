@@ -1,6 +1,5 @@
 // Admin password is admin
 
-
 // 1. Dependencies, settings and initialise app ----------
 const express = require('express');
 const mongoose = require('mongoose');
