@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Static Site Serving
-app.use(express.static('./public'))
+app.use(express.static('app'))
 
 // Enable CORS for all HTTP methods
 app.use(function(req, res, next) {
@@ -58,7 +58,7 @@ let Category = require('./models/Category.js');
 
 // Home 
 app.get('/', (req, res) => {
-   res.sendFile(path.join( __dirname, 'assets', './index.html' ));
+   res.sendFile(path.join( __dirname, 'assets', 'index.html' ));
 })
 
 // Products -----------------------------------
