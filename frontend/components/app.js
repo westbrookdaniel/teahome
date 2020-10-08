@@ -246,7 +246,9 @@ const App = {
       // let template = document.querySelector(`#${templateId}`).innerHTML;
       // // uses mustache to put data inside template
       // let output = Mustache.render(template, data);
-
+      
+      // hide rootEl for transition
+      App.rootEl.className = 'hidden';
 
       // fetches template file
       fetch(`../templates/${templateId}.html`, {
@@ -260,8 +262,6 @@ const App = {
         /// creates renderer using templateFileData
         let output = Mustache.render(template, data);
         // sets innerHTML to template
-        // hide rootEl for transition
-        App.rootEl.className = 'hidden';
         // waits
         setTimeout(function(){
           // insert output HTML into the rootEl
