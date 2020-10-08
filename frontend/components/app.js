@@ -280,6 +280,9 @@ const App = {
 
       })
       .catch(err => {
+        // unhide rootEl for transition
+        App.rootEl.className = '';
+
         console.log(err);
         Notify.show("Problem Loading Page");
       });
