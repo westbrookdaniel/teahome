@@ -271,7 +271,7 @@ const Admin = {
       // return new promise
       return new Promise((resolve, reject) => {
         // fetch
-        fetch(window.location.protocol + '//' + window.location.host + `/api/products/${id}`, {
+        fetch(window.location.hostname + `/api/products/${id}`, {
           method: 'PUT',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(dataObj)
@@ -306,7 +306,7 @@ const Admin = {
         // return new promise
         return new Promise((resolve, reject) => {
           // fetch
-          fetch(window.location.protocol + '//' + window.location.host + `/api/products/`, {
+          fetch(window.location.hostname + `/api/products/`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dataObj)
@@ -328,7 +328,7 @@ const Admin = {
         // return new promise
         return new Promise((resolve, reject) => {
           // fetch
-          fetch(window.location.protocol + '//' + window.location.host + `/api/products/${id}`, {
+          fetch(window.location.hostname + `/api/products/${id}`, {
             method: 'DELETE'
           })
           .then(res => {
@@ -352,7 +352,7 @@ const Admin = {
       // return new promise
       return new Promise((resolve, reject) => {
         // fetch
-        fetch(window.location.protocol + '//' + window.location.host + `/api/categories/${id}`, {
+        fetch(window.location.hostname + `/api/categories/${id}`, {
           method: 'PUT',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(dataObj)
@@ -374,7 +374,7 @@ const Admin = {
         // return new promise
         return new Promise((resolve, reject) => {
           // fetch
-          fetch(window.location.protocol + '//' + window.location.host + `/api/categories/${id}`, {
+          fetch(window.location.hostname + `/api/categories/${id}`, {
             method: 'DELETE'
           })
           .then(res => {
@@ -403,7 +403,7 @@ const Admin = {
         // return new promise
         return new Promise((resolve, reject) => {
           // fetch
-          fetch(window.location.protocol + '//' + window.location.host + `/api/categories/`, {
+          fetch(window.location.hostname + `/api/categories/`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dataObj)
