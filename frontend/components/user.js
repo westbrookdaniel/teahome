@@ -15,7 +15,7 @@ const User = {
     // sets up function to be called after authenticating admin password
     function createUser() {
       // send userData to backend API using fetch = POST
-      fetch('${window.location.protocol}//${window.location.host}/api/users', {
+      fetch(window.location.hostname + '/api/users', {
         method: 'post',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData)
@@ -43,7 +43,7 @@ const User = {
         adminAuth: userData.adminAuth
       }
       // fetch to authenticate adminAuth password
-      fetch('${window.location.protocol}//${window.location.host}/api/auth/admin', {
+      fetch(window.location.hostname + '/api/auth/admin', {
         method: 'post',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(adminAuthObj)
