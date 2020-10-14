@@ -7,7 +7,7 @@ const Auth = {
 
   signIn: (userData) => {
     // send userData to backend API
-    fetch('https://tea-home.herokuapp.com/api/auth/signin', {
+    fetch('${window.location.protocol}//${window.location.host}/api/auth/signin', {
       method: 'post',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData)
@@ -49,7 +49,7 @@ const Auth = {
     // check if jwt token exists in local localStorage
     if( localStorage.getItem('token') ){
       // validate token
-      fetch('https://tea-home.herokuapp.com/api/auth/validate', {
+      fetch('${window.location.protocol}//${window.location.host}/api/auth/validate', {
         headers: { "Authorization": `Bearer ${localStorage.token}` }
       })
       .then(res => {
