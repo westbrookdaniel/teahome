@@ -56,7 +56,7 @@ const Product = {
     // return new promise
     return new Promise((resolve, reject) => {
       // fetch categories
-      let url = new URL(window.location.hostname + "/api/products");
+      let url = new URL(window.location.protocol + '//' + window.location.host + "/api/products");
       let params = { ids: ids };
       url.search = new URLSearchParams(params).toString();
 
@@ -75,7 +75,7 @@ const Product = {
     // return new promise
     return new Promise((resolve, reject) => {
       // fetch categories
-      let url = new URL(window.location.hostname + "/api/products");
+      let url = new URL(window.location.protocol + '//' + window.location.host + "/api/products");
       let params = { category: categoryId };
       url.search = new URLSearchParams(params).toString();
 
