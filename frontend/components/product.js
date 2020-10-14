@@ -40,7 +40,7 @@ const Product = {
       // return new promise
       return new Promise((resolve, reject) => {
         // fetch categories
-        fetch(`${window.location.protocol}//${window.location.host}/api/categories/${id}`)
+        fetch(window.location.protocol + '//' + window.location.host + `/api/categories/${id}`)
         .then(res => res.json())
         .then(categories => {
           resolve(categories);

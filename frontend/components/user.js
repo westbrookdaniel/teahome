@@ -86,7 +86,7 @@ const User = {
       // return new promise
       return new Promise((resolve, reject) => {
         // fetch
-        fetch(`${window.location.protocol}//${window.location.host}/api/users/${id}`, {
+        fetch(window.location.protocol + '//' + window.location.host + `/api/users/${id}`, {
           method: 'PUT',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(dataObj)
@@ -106,7 +106,7 @@ const User = {
     // return new promise
     return new Promise((resolve, reject) => {
       // fetch
-      fetch(`${window.location.protocol}//${window.location.host}/api/users/${id}`, {
+      fetch(window.location.protocol + '//' + window.location.host + `/api/users/${id}`, {
         method: 'DELETE',
       })
       .then(res => res.json())
@@ -130,7 +130,7 @@ const User = {
     // return new promise
     return new Promise((resolve, reject) => {
       // fetch
-      fetch(`${window.location.protocol}//${window.location.host}/api/auth/pass`, {
+      fetch(window.location.protocol + '//' + window.location.host + `/api/auth/pass`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dataObj)
