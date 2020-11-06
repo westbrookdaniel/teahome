@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "git push heroku master"
   },
-  "author": "Daniel Brouse",
+  "author": "Daniel Westbrook",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
