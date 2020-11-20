@@ -88,11 +88,6 @@ const Auth = {
         }
       })
     }else {
-      //no local token
-      Notify.show("Please Sign In");
-      // redirect to sign inspect
-      location.hash = "#signIn";
-
       if( typeof callback == 'function' ){
         callback();
       }
