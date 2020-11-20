@@ -59,12 +59,6 @@ const Auth = {
           Auth.authenticated = false;
           // remove local token
           localStorage.removeItem('token');
-          // redirect to sign in
-          if (location.hash != '#signIn') {
-            location.hash = "#signIn";
-          }
-          // notify user
-          Notify.show("Invalid Token. Please Sign In");
           if( typeof callback == 'function' ){
             callback();
           }
@@ -94,6 +88,11 @@ const Auth = {
         }
       })
     }else {
+      //no local token
+      Notify.show("Please Sign In");
+      // redirect to sign inspect
+      location.hash = "#signIn";
+
       if( typeof callback == 'function' ){
         callback();
       }
